@@ -3,7 +3,10 @@ package com.hinz.iplay.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.hinz.iplay.product.feign.ProductFeign;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +18,7 @@ import com.hinz.iplay.product.service.BrandService;
 import com.hinz.common.utils.PageUtils;
 import com.hinz.common.utils.R;
 
+import javax.annotation.Resource;
 
 
 /**
@@ -24,11 +28,29 @@ import com.hinz.common.utils.R;
  * @email 157957329@qq.com
  * @date 2020-06-02 16:15:11
  */
+@RefreshScope
 @RestController
 @RequestMapping("product/brand")
 public class BrandController {
     @Autowired
     private BrandService brandService;
+
+
+    @Value("${name}")
+    private String name;
+
+    @Value("${age}")
+    private String age;
+
+    @Resource
+    private ProductFeign productFeign;
+
+
+    @RequestMapping("/hello")
+    public R hello(){
+
+        return productFeign.testFeign();
+    }
 
     /**
      * 列表
