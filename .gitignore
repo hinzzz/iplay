@@ -1,0 +1,104 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Maven template
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
+
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.gitignore
+.idea/
+iplay-common/src/main/resources/
+iplay-common/src/test/
+iplay-common/target/classes/
+iplay-common/target/generated-sources/
+iplay-coupon/src/main/java/com/hinz/iplay/coupon/controller/
+iplay-coupon/src/main/java/com/hinz/iplay/coupon/dao/
+iplay-coupon/src/main/java/com/hinz/iplay/coupon/entity/
+iplay-coupon/src/main/java/com/hinz/iplay/coupon/service/
+iplay-coupon/src/main/resources/mapper/
+iplay-coupon/src/main/resources/src/
+iplay-coupon/src/main/resources/static/
+iplay-coupon/src/main/resources/templates/
+iplay-gateway/.gitignore
+iplay-gateway/.mvn/
+iplay-gateway/mvnw
+iplay-gateway/mvnw.cmd
+iplay-gateway/pom.xml
+iplay-gateway/src/main/java/
+iplay-gateway/src/main/resources/application.yml
+iplay-gateway/src/main/resources/static/
+iplay-gateway/src/main/resources/templates/
+iplay-gateway/src/test/
+iplay-member/src/main/java/com/hinz/iplay/member/controller/
+iplay-member/src/main/java/com/hinz/iplay/member/dao/
+iplay-member/src/main/java/com/hinz/iplay/member/entity/
+iplay-member/src/main/java/com/hinz/iplay/member/service/
+iplay-member/src/main/resources/mapper/
+iplay-member/src/main/resources/src/
+iplay-member/src/main/resources/static/
+iplay-member/src/main/resources/templates/
+iplay-order/src/main/java/com/hinz/iplay/order/controller/
+iplay-order/src/main/java/com/hinz/iplay/order/dao/
+iplay-order/src/main/java/com/hinz/iplay/order/entity/
+iplay-order/src/main/java/com/hinz/iplay/order/service/
+iplay-order/src/main/resources/mapper/
+iplay-order/src/main/resources/src/
+iplay-order/src/main/resources/static/
+iplay-order/src/main/resources/templates/
+iplay-product/src/main/resources/static/
+iplay-product/src/main/resources/templates/
+iplay-ware/.gitignore
+iplay-ware/.mvn/
+iplay-ware/mvnw
+iplay-ware/mvnw.cmd
+iplay-ware/pom.xml
+iplay-ware/src/main/java/
+iplay-ware/src/main/resources/mapper/
+iplay-ware/src/main/resources/src/
+iplay-ware/src/main/resources/static/
+iplay-ware/src/main/resources/templates/
+iplay-ware/src/test/
+renren-generator/.gitignore
+renren-generator/src/main/java/io/renren/RenrenApplication.java
+renren-generator/target/classes/META-INF/
+renren-generator/target/classes/application.yml
+renren-generator/target/classes/generator.properties
+renren-generator/target/classes/mapper/
+renren-generator/target/classes/static/
+renren-generator/target/classes/template/
+renren-generator/target/classes/views/
+renren-generator/target/generated-sources/
+renren-generator/target/generated-test-sources/
+weplay.iml

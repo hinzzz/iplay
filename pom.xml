@@ -17,13 +17,13 @@
 
 
   <modules>
-    <module>renren-generator</module>
     <module>iplay-coupon</module>
     <module>iplay-member</module>
     <module>iplay-order</module>
     <module>iplay-product</module>
     <module>iplay-ware</module>
     <module>iplay-common</module>
+    <module>iplay-gateway</module>
   </modules>
 
 
