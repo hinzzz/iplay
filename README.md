@@ -60,7 +60,7 @@ spring.cloud.nacos.config.namespace=b3404bc0-d7dc-4855-b519-570ed34b62d7
 @FeignClient("iplay-member")
 public interface ProductFeign {
 
-    @RequestMapping("/member/member/testFeign")
+    @RequestMapping("/member/member/testFeign") 
     R testFeign();
 }
 
@@ -69,3 +69,32 @@ iplay-member为服务端的spring.application.name
 
 
 3、gateway简单使用
+
+
+
+4、前端开发环境搭建
+visual studio code 
+相关插件
+Auto Close Tag
+Auto Rename Tag
+ESLint
+HTML CSS Support
+HTML Snippets
+JavaScript (ES6) code snippets
+Live Server
+open in browser
+Vetur
+
+
+
+搭建 vue-cli + webpack 安装配置
+npm install -g vue-cli
+vue init webpack
+
+
+mkdir -p /mydata/nginx/www /mydata/nginx/logs /mydata/nginx/conf
+
+docker run -d -p 80:80 -p 443:443 --name nginx-server -v /home/nginx/www:/usr/share/nginx/html 
+-v /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/logs:/var/log/nginx nginx
+
+
