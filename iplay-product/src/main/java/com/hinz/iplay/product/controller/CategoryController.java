@@ -33,6 +33,17 @@ public class CategoryController {
     /**
      * 列表
      */
+    @RequestMapping("/listTree")
+    //@RequiresPermissions("product:category:list")
+    public R listTree(@RequestParam Map<String, Object> params){
+
+
+        return R.ok().put("tree", categoryService.listTree());
+    }
+
+    /**
+     * 列表
+     */
     @RequestMapping("/list")
     //@RequiresPermissions("product:category:list")
     public R list(@RequestParam Map<String, Object> params){

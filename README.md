@@ -89,6 +89,8 @@ Vetur
 
 搭建 vue-cli + webpack 安装配置
 npm install -g vue-cli
+npm install  webpack -g
+
 vue init webpack
 
 
