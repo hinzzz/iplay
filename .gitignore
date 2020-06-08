@@ -140,11 +140,4 @@ buildNumber.properties
 
 .gitignore
 .idea/
-iplay-common/iplay-common.iml
-iplay-common/target/classes/
-iplay-common/target/generated-sources/
-iplay-gateway/iplay-gateway.iml
-iplay-gateway/pom.xml
-iplay-ware/iplay-ware.iml
-iplay-ware/pom.xml
-renren-generator/renren-generator.iml
+*.iml
