@@ -100,3 +100,50 @@ docker run -d -p 80:80 -p 443:443 --name nginx-server -v /home/nginx/www:/usr/sh
 -v /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/logs:/var/log/nginx nginx
 
 
+前端开发
+
+1、接口全部调用统一网关 然后再由网关去请求响应服务
+修改网关地址：D:\space\iplay\renren-fast-vue\static\config\index.js 
+  // api接口请求地址
+  window.SITE_CONFIG['baseUrl'] = 'http://localhost:80/api';
+
+2、配置好响应网关
+网关路由的时候默认按照配置顺序路由 因此应该网关配置先精确在模糊
+
+3、跨域处理
+接口全部调用统一网关 然后再由网关去请求响应服务之后出现
+Access to XMLHttpRequest at 'http://localhost:10003/api/sys/menu/nav?t=1592359305614' from origin 'http://localhost:8001' 
+has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' 
+header is present on the requested resource.
+
+什么事跨域 ： 当一个请求url的协议、域名、端口三者之间任意一个与当前页面url不同即为跨域
+
+解决：
+网关服务配置允许跨域
+@Configuration
+public class GulimallCorsConfiguration {
+
+    @Bean
+    public CorsWebFilter corsWebFilter(){
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+
+        //1、配置跨域
+        corsConfiguration.addAllowedHeader("*");
+        corsConfiguration.addAllowedMethod("*");
+        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.setAllowCredentials(true);
+
+        source.registerCorsConfiguration("/**",corsConfiguration);
+        return new CorsWebFilter(source);
+    }
+}
+
+
+
+4、路由重写
+filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+            
+http://localhost:10003/api/captcha.jpg   http://localhost:8080/renren-fast/captcha.jpg

@@ -23,7 +23,7 @@
     <module>iplay-product</module>
     <module>iplay-ware</module>
     <module>iplay-common</module>
-    <module>iplay-gateway</module>
+    <module>renren-fast</module>
   </modules>
 
 

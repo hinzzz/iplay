@@ -38,7 +38,7 @@ public class CategoryController {
     public R listTree(@RequestParam Map<String, Object> params){
 
 
-        return R.ok().put("tree", categoryService.listTree());
+        return R.ok().put("data", categoryService.listTree());
     }
 
     /**
