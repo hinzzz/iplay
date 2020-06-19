@@ -1,6 +1,5 @@
 package com.hinz.iplay.product.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,7 +33,11 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
     @Override
     public List<CategoryEntity> listTree() {
+        //获取所有分类
         List<CategoryEntity> entities = baseMapper.selectList(null);
+        //2、组装成父子的树形结构
+
+        //2.1）、找到所有的一级分类
         List<CategoryEntity> result = entities.stream().filter(entity ->
                 entity.getParentCid() == 0
         ).map(menu -> {
@@ -47,8 +50,10 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
     }
 
     private List<CategoryEntity> getChildrens(CategoryEntity root, List<CategoryEntity> entities) {
-        List<CategoryEntity> childrens = entities.stream().filter(entity -> entity.getParentCid() == root.getCatId())
+        List<CategoryEntity> childrens = entities.stream().filter(entity ->
+                entity.getParentCid().intValue() == root.getCatId().intValue())
                 .map(menu -> {
+                    //1、找到子菜单
                     menu.setChildrens(getChildrens(menu, entities));
                     return menu;
                 }).sorted((m1, m2) -> {

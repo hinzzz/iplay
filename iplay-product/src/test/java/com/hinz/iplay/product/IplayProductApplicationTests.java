@@ -2,6 +2,7 @@ package com.hinz.iplay.product;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hinz.iplay.product.entity.BrandEntity;
+import com.hinz.iplay.product.entity.CategoryEntity;
 import com.hinz.iplay.product.service.BrandService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +18,24 @@ class IplayProductApplicationTests {
 
     @Test
     void contextLoads() {
-        BrandEntity brandEntity = new BrandEntity();
 
-        // 更新
-        brandEntity.setBrandId(5L);
-        brandEntity.setDescript("华为牛逼");
-        brandService.updateById(brandEntity);
+        CategoryEntity c1 = new CategoryEntity();
+        CategoryEntity c2 = new CategoryEntity();
+        c1.setCatId(1L);
+        c2.setCatId(1L);
+        System.out.println(c1.getCatId() == c2.getCatId());
 
-         //插入
-//        brandEntity.setName("hinz");
-//        brandService.save(brandEntity);
-//        System.out.println("保存成功...");
+        c1.setCatId(129L);
+        c2.setCatId(129L);
+        System.out.println(c1.getCatId() == c2.getCatId());
 
-        List<BrandEntity> list = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id",2L));
-        list.forEach((item)-> {
-            System.out.println(item);
-        });
+        c1.setCatId(1000L);
+        c2.setCatId(1000L);
+        System.out.println(c1.getCatId() == c2.getCatId());
+
+        c1.setCatId(164L);
+        c2.setCatId(164L);
+        System.out.println(c1.getCatId() == c2.getCatId());
     }
 
 }

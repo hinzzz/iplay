@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.Data;
 
 /**
